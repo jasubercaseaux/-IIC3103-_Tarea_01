@@ -1,0 +1,38 @@
+{% extends 'series/main.html'%}
+{% load static %}
+{% block content %} 
+    <div class = "container">
+      <div class="card mb-3" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+          <img src="https://spoilertime.com/wp-content/uploads/2017/07/breaking-bad-breaking-bad-banner-758x140.jpg" class="card-img-top" alt="...">
+          <div class="card-body" >
+            <h3 class="card-title">BREAKING BAD</h3>
+              {% for temp in temporadas_bb %}
+                  <a href="/serie/{{'1'}}/temporada/{{temp}}"
+                  ><input
+                    value="Temporada {{ temp }}"
+                    type="button"
+                    class="btn btn-outline-secondary"
+                    style="margin-bottom: 5px"
+                  /></a>
+              {% endfor %}
+          </div>
+      </div>
+      <div class="card mb-3" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+          <img src="https://spoilertime.com/wp-content/uploads/2017/06/banner-780x144.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h3 class="card-title">BETTER CALL SAUL</h3>
+              {% for temp in temporadas_bcs %}
+                  <a href="/serie/{{'2'}}/temporada/{{temp}}"
+                  ><input
+                    type="submit"
+                    value="Temporada {{ temp }}"
+                    class="btn btn-outline-secondary"
+                    type="button"
+                    style="margin-bottom: 5px"
+                  /></a>
+              {% endfor %}
+          </div>
+      </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,26 @@
+{% extends 'series/main.html'%}
+{% load static %}
+{% block content %} 
+    <div class = "container">
+        <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+
+          <div class="card-header">
+            {{series}}
+          </div>
+          <div class="card-body">
+              <h1 class="card-title"> {{ title }}</h1>
+              <h5 class="card-title">Temporada {{ season }}</h5>
+              <h5 class="card-title">Capítulo {{ episode }}</h5>
+              <h5 class="card-title">Fecha Lanzamiento </h5>
+              <p style="padding-left: 25px">{{ air_date }}</p>
+              <h5 class="card-title">Personajes</h5>
+              <div style="padding-left: 25px">
+              {% for c_per in characters %}
+                  <a href="/personaje/?nombre={{c_per}}" class="btn btn-outline-secondary"
+                  style="margin-bottom: 5px"> {{ c_per }} </a>
+              {% endfor %}
+              </div>
+          </div>
+        </div>
+    </div>
+{% endblock %}

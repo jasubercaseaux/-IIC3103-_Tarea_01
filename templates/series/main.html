@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 01</title>
+
+    {# Cargamos la librería #}
+    {% load bootstrap4 %}
+
+    {# CSS Bootstrap #}
+    {% bootstrap_css %}
+
+
+</head>
+<body>
+
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a href="/" class="btn btn-outline-secondary" >HOME</a>
+        <form class="d-flex" action="/personajes/" method="GET">
+          <input class="form-control me-2" type = "text" name = "name" placeholder="Ingresar nombre..." aria-label="Search">
+          <button class="btn btn-outline-secondary" style="margin-left: 10px" type="submit">Buscar</button>
+        </form>
+      </div>
+    </nav>
+
+    <div >
+    <br>
+    </div>
+
+{% block content%}
+{% endblock %}
+
+<!--
+Se usó el siguiente link, para aprender a usar Django y crear una app de prueba:
+https://dev.to/yahaya_hk/how-to-populate-your-database-with-data-from-an-external-api-in-django-398i
+-->
+
+{# JS y jQuery Bootstrap #}
+    {% bootstrap_javascript jquery='full' %}
+</body>
+</html>

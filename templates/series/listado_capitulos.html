@@ -1,0 +1,21 @@
+{% extends 'series/main.html'%}
+{% load static %}
+{% block content %} 
+    <div class = "container">
+        <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+          <div class="card-header">
+            {{nombre_serie}}
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Temporada {{ n_temp }}</h3>
+            {% for key_1, value_1 in data_capitulos.items %}
+              <li class="list-group-item">
+              <a href="/detalle_capitulo/{{key_1}}"><input type="submit" value="{{ value_1 }}"
+              style="border-style: none;background-color: white"/></a>
+              </li>
+            {% endfor %}
+          </div>
+        </div>
+        <br>
+    </div>
+{% endblock %}

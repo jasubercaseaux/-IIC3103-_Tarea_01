@@ -1,0 +1,56 @@
+{% extends 'series/main.html'%}
+{% load static %}
+{% block content %} 
+    <div class = "container">
+        <div class="row g-0 bg-light position-relative"
+             style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+          <div class="col-md-3 mb-md-0 p-md-3">
+            <img src="{{ img }}" class="w-100" alt="...">
+          </div>
+          <div class="col-md-8 p-3 ps-md-0 " >
+            <h3 class="mt-0">{{ name }} </h3>
+            <span>| </span>
+            {% for i in occupation %}
+              <span>{{i}} |</span>
+            {% endfor %}
+            <div class="row g-0 bg-light position-relative">
+              <div class="col-md-5 p-3 ps-md-0">
+                <h5>Status </h5>
+                <p style="padding-left: 25px">{{ status }}</p>
+                <h5>Sobrenombre(s) </h5>
+                <p style="padding-left: 25px">{{ nickname }}</p>
+                <h5>Temporadas BB </h5>
+                <div style="padding-left: 25px">
+                    {% for i in appearance %}
+                        <a href="/serie/{{'1'}}/temporada/{{i}}" class="btn btn-outline-secondary"
+                        style="margin-bottom: 5px"> {{i}} </a>
+                    {% endfor %}
+                </div>
+                <h5>Temporadas BCS </h5>
+                <div style="padding-left: 25px">
+                    {% for i in better_call_saul_appearance %}
+                        <a href="/serie/{{'2'}}/temporada/{{i}}" class="btn btn-outline-secondary"
+                        style="margin-bottom: 5px"> {{i}} </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-7 p-3 ps-md-0">
+                <h5>Actor / Actriz </h5>
+                <p style="padding-left: 25px">{{ portrayed }}</p>
+                <h5>Serie(s) </h5>
+                <p style="padding-left: 25px">{{ category }}</p>
+                <h5>Frase(s) </h5>
+                <div style="padding-left: 25px; overflow-y: scroll; height: 110px">
+                    {% for i in frases %}
+                        <span >{{ i }}</span><br>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+            </div>
+
+          </div>
+        </div>
+    </div>
+{% endblock %}
